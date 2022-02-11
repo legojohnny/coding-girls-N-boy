@@ -8,7 +8,7 @@
 4. function
 5. object
 
-자바스크립트에서의 모든 타입은 object를 상속받고 있다.
+자바스크립트에서의 모든 원시 타입은 Object를 상속받고 있다.
 
 상속이 무엇이냐?
 
@@ -64,4 +64,38 @@ let ella = new Human('성경', 'female', 1)
 
 // 응애! Hello, world!
 ella.talk();
+```
+
+본론으로 돌아가서 상속이란 무엇이냐?
+
+```
+class Animal{
+  spicies= '';
+
+  eat= function(){
+    console.log('냠냠')
+    return "쩝쩝"
+  }
+
+  constructor(spicies){
+    this.spicies = spicies
+  }
+}
+
+class Human extends Animal{
+  name = '';
+  gender = '';
+  age = 0;
+  
+  talk = function(){
+    return "응애! Hello, world!"
+  }
+
+  constructor(name, gender, c){
+     super('인간')
+    this.name = name;
+    this.gender = gender;
+    this.age = c;
+  }
+}
 ```
