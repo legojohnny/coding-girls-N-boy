@@ -78,6 +78,4 @@ ajax는 기존 웹사이트들은 다음페이지 같은 기능을 수행할때 
 Not ajax : https://ma9.netmarble.net/news/notice/BbsListView.Asp
 Ajax: https://cafe.naver.com/joonggonara
 
-```
-예시:) http://...
-```
+`index.html` 참조

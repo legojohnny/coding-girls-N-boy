@@ -1,0 +1,40 @@
+<html>
+    <head></head>
+    <body>
+        <button type="button" onclick="getAjax()">Ajax</button>
+        <button type="button" onclick="getNotAjax()">Not Ajax</button>
+        <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+        <script type="text/javascript">
+        // Initialize Parse
+        Parse.initialize("aL45kWP8EOH6ollIbxltqez3KVcP7FbFTfpPMpvm", "48JqFIGcgnTDzRwW9l0qMkOvM79cZpHvyJABvkLc"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+        Parse.serverURL = "https://parseapi.back4app.com/";
+        let ajax = Parse.Object.extend("ajax");
+        let result = ''
+            function getAjax(){
+                result = ''
+                let query = new Parse.Query(ajax).equalTo("key", "ajax")
+
+                query.find().then(res=> {
+                    console.log('loaded')
+                    result = res[0].get('content')
+                });
+                
+                console.log('result log : ', result)
+                console.log('result size : ', result.length * 4 / 1000 + 'KB')
+            }
+
+            function getNotAjax(){
+                result = ''
+                let query = new Parse.Query(ajax).equalTo("key", "!ajax")
+
+                query.find().then(res=> {
+                    console.log('loaded')
+                    result = res[0].get('content')
+                });
+                
+                console.log('result log : ', result)
+                console.log('result size : ', result.length * 4 / 1000 + 'KB')
+            }
+        </script>
+    </body>
+</html>
