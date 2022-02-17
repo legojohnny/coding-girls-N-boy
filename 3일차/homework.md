@@ -37,3 +37,6 @@
 1. HTTP [링크](https://opentutorials.org/course/3385/21673)
 2. DNS [링크](https://opentutorials.org/course/3276/20296) - IP 주소와 hosts 링크에 있는 두개 동영상만 봐도 됨
 3. private 주소, public 주소, 서브넷이 무엇인지 찾아보기~
+
+
+숙제는 아니고 본인 프로젝트 github page 사용해서 호스팅 해 보기
