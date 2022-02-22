@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <button onclick="get()">a</button>
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            function get() {
+                let a = fetch('http://echo-sweet-home.iptime.org:62621/page').then(res => {
+                    console.log(res.body)
+                })
+
+                let b = axios.get('http://echo-sweet-home.iptime.org:62621/page').then(res => {
+                    console.log(res.data)
+                })
+
+                let c = $.get('http://echo-sweet-home.iptime.org:62621/page').then(res => {
+                    console.log(res)
+                })
+            }
+        </script>
+    </body>
+</html>
