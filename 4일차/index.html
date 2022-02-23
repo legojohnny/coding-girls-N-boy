@@ -1,6 +1,7 @@
 <html>
     <head>
         <button onclick="get()">a</button>
+        <button onclick="get2()">get2</button>
     </head>
     <body>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -14,10 +15,26 @@
             let c;
             function get() {
                 a = fetch('http://echo-sweet-home.iptime.org:62621/page')
+                console.log(a)
 
-                b = axios.get('http://echo-sweet-home.iptime.org:62621/page')
+                b = axios.get('http://echo-sweet-home.iptime.org:62621/page?id=4')
+                console.log(b)
 
                 c = $.get('http://echo-sweet-home.iptime.org:62621/page')
+                console.log(c)
+            }
+
+            async function get2(){
+                let promises = []
+                console.log('1', promises)
+
+                for(let i = 0; i < 10; i++) {
+                    promises.push(axios.get("http://echo-sweet-home.iptime.org:62621/random"))
+                }
+                
+                console.log('2', promises)
+                await Promise.allSettled(promises)
+                console.log('3', promises)
             }
         </script>
     </body>
