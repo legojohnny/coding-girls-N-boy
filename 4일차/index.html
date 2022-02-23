@@ -11,7 +11,7 @@
         <script type="text/javascript">
             function get() {
                 let a = fetch('http://echo-sweet-home.iptime.org:62621/page').then(res => {
-                    console.log(res.body)
+                    console.log(res)
                 })
 
                 let b = axios.get('http://echo-sweet-home.iptime.org:62621/page').then(res => {
