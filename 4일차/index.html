@@ -15,13 +15,9 @@
             function get() {
                 a = fetch('http://echo-sweet-home.iptime.org:62621/page')
 
-                b = axios.get('http://echo-sweet-home.iptime.org:62621/page').then(res => {
-                    console.log(res.data)
-                })
+                b = axios.get('http://echo-sweet-home.iptime.org:62621/page')
 
-                c = $.get('http://echo-sweet-home.iptime.org:62621/page').then(res => {
-                    console.log(res)
-                })
+                c = $.get('http://echo-sweet-home.iptime.org:62621/page')
             }
         </script>
     </body>
