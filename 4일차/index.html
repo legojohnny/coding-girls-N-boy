@@ -14,27 +14,29 @@
             let b;
             let c;
             function get() {
-                a = fetch('http://echo-sweet-home.iptime.org:62621/page')
-                console.log(a)
+                a = fetch('http://echo-sweet-home.iptime.org:62621/page') // 기다려줄수 없다!!
+                console.log(a) // console.log(a); // 응답이 안왔는데... a를 출력해버린거죠
 
                 b = axios.get('http://echo-sweet-home.iptime.org:62621/page?id=4')
                 console.log(b)
 
-                c = $.get('http://echo-sweet-home.iptime.org:62621/page')
-                console.log(c)
+                c = $.get('http://echo-sweet-home.iptime.org:62621/page') // 3
+                console.log(c) // ???????
             }
 
             async function get2(){
-                let promises = []
-                console.log('1', promises)
+                let promises = []           // 1. promises 배열을 만든다. 비동기
+                console.log('1', promises)  // 2. 콘솔에 promises 배열을 로그로 찍는다. 비동기
 
                 for(let i = 0; i < 10; i++) {
-                    promises.push(axios.get("http://echo-sweet-home.iptime.org:62621/random"))
+                    promises.push(axios.get("http://echo-sweet-home.iptime.org:62621/random").then(res => {
+                        console.log(`${i} is Done!`)
+                    }))  // 3.promises 배열에 axios 요청을 10개를 순식간에 요청한다. 비동기
                 }
                 
-                console.log('2', promises)
-                await Promise.allSettled(promises)
-                console.log('3', promises)
+                console.log('2', promises) // 4. promises 배열을 로그로 찍는다.
+                await Promise.allSettled(promises)  //5. promises에 있는 요청 10개를 다 완료될때까지 기다립니다.
+                console.log('3',promises)   // 6. 실행이 된 promises들을 로그로 찍는다.
             }
         </script>
     </body>
