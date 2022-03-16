@@ -9,9 +9,12 @@ const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-
+let star = '';
 rl.on('line', function (a) {
-
+    for(let i=0; i <= a-1; i++){
+      star += '*';
+      console.log(star);
+    }
     /**
      * 백준 컴퓨터가 a에다가 변수 넣어줌.
      * 아래에 코드를 작성하세요.
